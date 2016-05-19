@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Τομείς</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Όνομα</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sectors.each do |sector| %>
+      <tr>
+        <td><%= link_to sector.name, sector %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Νέος Τομέας', new_sector_path %>

@@ -1,0 +1,15 @@
+<table class="table">
+  <thead>
+    <tr>
+      <% unless mode == "client" %>
+        <th>Πελάτης</th>
+      <% end %>
+      <th>Τηλέφωνο</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render client_phones, mode: mode %>
+  </tbody>
+</table>

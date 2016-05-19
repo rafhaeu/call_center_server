@@ -1,0 +1,32 @@
+<%= form_for(internal) do |f| %>
+  <% if internal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(internal.errors.count, "error") %> prohibited this internal from being saved:</h2>
+
+      <ul>
+      <% internal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id, 'Κωδικός' %>
+    <%= f.text_field :id, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name, 'Όνομα' %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sector_id, 'Τομέας' %>
+    <%= f.select :sector_id, options_for_select(Sector.all.map { |sector| [sector.name, sector.id] }), {}, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit class: 'btn btn-success' %>
+  </div>
+<% end %>

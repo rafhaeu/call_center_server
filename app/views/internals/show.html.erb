@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @internal.name %></h1>
+
+<p>
+  <strong>Sector:</strong>
+  <%= @internal.sector.name %>
+</p>
+
+<%= link_to 'Επεξεργασία', edit_internal_path(@internal) %> |
+<%= link_to 'Εσωτερικά', internals_path %>

@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-md-4">
+    <p id="notice"><%= notice %></p>
+
+    <p>
+    <strong>Κωδικός</strong>
+    <%= @client.id %>
+    </p>
+
+    <p>
+    <strong>Επωνυμία:</strong>
+    <%= @client.name %>
+    </p>
+
+    <%= link_to 'Επεξεργασία', edit_client_path(@client) %> |
+    <%= link_to 'Πελάτες', clients_path %>
+
+    <%= render(
+      partial: "client_phones/client_phones",
+      locals: {
+        mode: "client",
+        client_phones: @client.client_phones
+      })
+    %>
+
+  </div>
+  <div class="col-md-8">
+    <%= react_component "CallsContainer", callsPath: "/calls?client=#{@client.id}" %>
+  </div>
+</div>
+</div>

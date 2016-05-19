@@ -1,0 +1,27 @@
+<%= form_for(call_type) do |f| %>
+  <% if call_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(call_type.errors.count, "error") %> prohibited this call_type from being saved:</h2>
+
+      <ul>
+      <% call_type.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id, 'Κωδικός' %>
+    <%= f.text_field :id, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name, 'Όνομα' %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit class: 'btn btn-success' %>
+  </div>
+<% end %>

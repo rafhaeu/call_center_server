@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Εσωτερικά</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Κωδικός</th>
+      <th>Όνομα</th>
+      <th>Τομέας</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @internals.each do |internal| %>
+      <tr>
+        <td><%= internal.id %></td>
+        <td><%= internal.name %></td>
+        <td><%= internal.sector.name unless internal.sector.nil? %></td>
+        <td><%= link_to 'Προβολή', internal %></td>
+        <td><%= link_to 'Επεξεργασία', edit_internal_path(internal) %></td>
+        <td><%= link_to 'Διαγραφή', internal, method: :delete, data: { confirm: 'Σίγουρα?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Νέο Εσωτερικό', new_internal_path %>

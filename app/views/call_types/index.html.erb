@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Τύποι Κλήσεων</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Κωδικός</th>
+      <th>Όνομα</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @call_types.each do |call_type| %>
+      <tr>
+        <td><%= call_type.name %></td>
+        <td><%= link_to 'Προβολή', call_type %></td>
+        <td><%= link_to 'Επεξεργασία', edit_call_type_path(call_type) %></td>
+        <td><%= link_to 'Διαγραφή', call_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Νέος τύπος κλήσεων', new_call_type_path %>
