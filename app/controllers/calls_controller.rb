@@ -1,4 +1,5 @@
 class CallsController < ApplicationController
+  skip_before_filter :verify_authenticity_token, only: :create
   before_action :set_call, only: [:show, :edit, :update, :destroy]
 
   def today
@@ -72,6 +73,8 @@ class CallsController < ApplicationController
   def create
     @call = Call.new(call_params)
     @call.client = ClientPhone.find_by(phone: @call.phone).try(:client)
+    @call.internal = Internal.find(params[:call][:internal_id])
+    @call.call_type = CallType.find(params[:call][:call_type_id])
 
     respond_to do |format|
       if @call.save
@@ -117,6 +120,6 @@ class CallsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def call_params
-      params.require(:call).permit(:phone, :called_at, :duration, :internal_id, :call_type_id, :rings, :client_id)
+      params.require(:call).permit(:phone, :called_at, :duration, :internal_id, :call_type_id)
     end
 end
