@@ -81,5 +81,3 @@ test:
 production:
   <<: *default
   database: sie_call_center_production
-  username: sie_call_center
-  password: <%= ENV['SIE_CALL_CENTER_DATABASE_PASSWORD'] %>
