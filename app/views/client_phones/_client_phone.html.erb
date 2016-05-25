@@ -3,7 +3,6 @@
     <td><%= client_phone.client.try(:name) %></td>
   <% end %>
   <td><%= client_phone.phone %></td>
-  <td><%= link_to 'Προβολή', client_phone %></td>
   <td><%= link_to 'Επεξεργασία', edit_client_phone_path(client_phone) %></td>
   <td><%= link_to 'Διαγραφή', client_phone, method: :delete, data: { confirm: 'Σίγουρα?' } %></td>
 </tr>
