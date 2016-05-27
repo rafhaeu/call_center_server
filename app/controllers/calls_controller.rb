@@ -79,7 +79,7 @@ class CallsController < ApplicationController
     respond_to do |format|
       if @call.save
         format.html { redirect_to @call, notice: 'Call was successfully created.' }
-        format.json { render :show, status: :created, location: @call }
+        format.json { render :json, status: :created, location: @call }
       else
         format.html { render :new }
         format.json { render json: @call.errors, status: :unprocessable_entity }
