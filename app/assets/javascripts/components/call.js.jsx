@@ -28,11 +28,11 @@ var Call = React.createClass({
     }
 
     var callTypeIcons = [{
-      id: 2,
+      id: 1,
       glyphicon: "log-out",
       color: "red"
     }, {
-      id: 1,
+      id: 2,
       glyphicon: "log-in",
       color: "green"
     }];

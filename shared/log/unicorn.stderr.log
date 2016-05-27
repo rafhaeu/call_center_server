@@ -1,0 +1,70 @@
+I, [2016-05-25T12:28:39.176201 #2120]  INFO -- : Refreshing Gem list
+I, [2016-05-25T12:28:46.392272 #2120]  INFO -- : listening on addr=/home/hiken/rails/call_center_server/shared/sockets/unicorn.sock fd=11
+I, [2016-05-25T12:28:46.392599 #2120]  INFO -- : worker=0 spawning...
+I, [2016-05-25T12:28:46.397684 #2120]  INFO -- : worker=1 spawning...
+I, [2016-05-25T12:28:46.399191 #2124]  INFO -- : worker=0 spawned pid=2124
+I, [2016-05-25T12:28:46.399690 #2124]  INFO -- : worker=0 ready
+I, [2016-05-25T12:28:46.405098 #2120]  INFO -- : master process ready
+I, [2016-05-25T12:28:46.409699 #2127]  INFO -- : worker=1 spawned pid=2127
+I, [2016-05-25T12:28:46.410219 #2127]  INFO -- : worker=1 ready
+I, [2016-05-25T12:52:54.615391 #2120]  INFO -- : reaped #<Process::Status: pid 2124 exit 0> worker=0
+I, [2016-05-25T12:52:54.716226 #2120]  INFO -- : reaped #<Process::Status: pid 2127 exit 0> worker=1
+I, [2016-05-25T12:52:54.716531 #2120]  INFO -- : master complete
+I, [2016-05-25T12:53:47.012556 #1882]  INFO -- : Refreshing Gem list
+I, [2016-05-25T12:53:54.377624 #1882]  INFO -- : unlinking existing socket=/home/hiken/rails/call_center_server/shared/sockets/unicorn.sock
+I, [2016-05-25T12:53:54.378028 #1882]  INFO -- : listening on addr=/home/hiken/rails/call_center_server/shared/sockets/unicorn.sock fd=11
+I, [2016-05-25T12:53:54.378269 #1882]  INFO -- : worker=0 spawning...
+I, [2016-05-25T12:53:54.382912 #1882]  INFO -- : worker=1 spawning...
+I, [2016-05-25T12:53:54.384424 #1890]  INFO -- : worker=0 spawned pid=1890
+I, [2016-05-25T12:53:54.384931 #1890]  INFO -- : worker=0 ready
+I, [2016-05-25T12:53:54.390049 #1882]  INFO -- : master process ready
+I, [2016-05-25T12:53:54.391663 #1893]  INFO -- : worker=1 spawned pid=1893
+I, [2016-05-25T12:53:54.392191 #1893]  INFO -- : worker=1 ready
+I, [2016-05-25T16:20:06.073974 #1882]  INFO -- : reaped #<Process::Status: pid 1890 exit 0> worker=0
+I, [2016-05-25T16:20:06.074413 #1882]  INFO -- : reaped #<Process::Status: pid 1893 exit 0> worker=1
+I, [2016-05-25T16:20:06.074581 #1882]  INFO -- : master complete
+I, [2016-05-26T08:18:14.106228 #1757]  INFO -- : Refreshing Gem list
+I, [2016-05-26T08:18:21.472026 #1757]  INFO -- : unlinking existing socket=/home/hiken/rails/call_center_server/shared/sockets/unicorn.sock
+I, [2016-05-26T08:18:21.474046 #1757]  INFO -- : listening on addr=/home/hiken/rails/call_center_server/shared/sockets/unicorn.sock fd=11
+I, [2016-05-26T08:18:21.474318 #1757]  INFO -- : worker=0 spawning...
+I, [2016-05-26T08:18:21.479045 #1757]  INFO -- : worker=1 spawning...
+I, [2016-05-26T08:18:21.480378 #1766]  INFO -- : worker=0 spawned pid=1766
+I, [2016-05-26T08:18:21.480966 #1766]  INFO -- : worker=0 ready
+I, [2016-05-26T08:18:21.485544 #1757]  INFO -- : master process ready
+I, [2016-05-26T08:18:21.487029 #1769]  INFO -- : worker=1 spawned pid=1769
+I, [2016-05-26T08:18:21.487537 #1769]  INFO -- : worker=1 ready
+I, [2016-05-26T10:26:42.980299 #1743]  INFO -- : Refreshing Gem list
+I, [2016-05-26T10:26:50.880235 #1743]  INFO -- : unlinking existing socket=/home/hiken/rails/call_center_server/shared/sockets/unicorn.sock
+I, [2016-05-26T10:26:50.890077 #1743]  INFO -- : listening on addr=/home/hiken/rails/call_center_server/shared/sockets/unicorn.sock fd=11
+I, [2016-05-26T10:26:50.890360 #1743]  INFO -- : worker=0 spawning...
+I, [2016-05-26T10:26:50.895417 #1743]  INFO -- : worker=1 spawning...
+I, [2016-05-26T10:26:50.896991 #1751]  INFO -- : worker=0 spawned pid=1751
+I, [2016-05-26T10:26:50.897586 #1751]  INFO -- : worker=0 ready
+I, [2016-05-26T10:26:50.903103 #1743]  INFO -- : master process ready
+I, [2016-05-26T10:26:50.904721 #1754]  INFO -- : worker=1 spawned pid=1754
+I, [2016-05-26T10:26:50.905233 #1754]  INFO -- : worker=1 ready
+I, [2016-05-26T16:02:27.291339 #1743]  INFO -- : reaped #<Process::Status: pid 1751 exit 0> worker=0
+I, [2016-05-26T16:02:27.355488 #1743]  INFO -- : reaped #<Process::Status: pid 1754 exit 0> worker=1
+I, [2016-05-26T16:02:27.356011 #1743]  INFO -- : master complete
+I, [2016-05-27T08:11:13.210985 #1772]  INFO -- : Refreshing Gem list
+I, [2016-05-27T08:11:20.335002 #1772]  INFO -- : unlinking existing socket=/home/hiken/rails/call_center_server/shared/sockets/unicorn.sock
+I, [2016-05-27T08:11:20.337014 #1772]  INFO -- : listening on addr=/home/hiken/rails/call_center_server/shared/sockets/unicorn.sock fd=11
+I, [2016-05-27T08:11:20.337270 #1772]  INFO -- : worker=0 spawning...
+I, [2016-05-27T08:11:20.341896 #1772]  INFO -- : worker=1 spawning...
+I, [2016-05-27T08:11:20.343549 #1780]  INFO -- : worker=0 spawned pid=1780
+I, [2016-05-27T08:11:20.343975 #1780]  INFO -- : worker=0 ready
+I, [2016-05-27T08:11:20.349072 #1772]  INFO -- : master process ready
+I, [2016-05-27T08:11:20.350571 #1783]  INFO -- : worker=1 spawned pid=1783
+I, [2016-05-27T08:11:20.351055 #1783]  INFO -- : worker=1 ready
+I, [2016-05-27T11:13:51.977703 #2912]  INFO -- : executing ["/home/hiken/.rvm/gems/ruby-2.2.2/bin/unicorn", "-c", "config/unicorn.rb", "-E", "production", "-D", {11=>#<Kgio::UNIXServer:/home/hiken/rails/call_center_server/shared/sockets/unicorn.sock>}] (in /home/hiken/rails/call_center_server)
+I, [2016-05-27T11:13:51.978137 #2912]  INFO -- : forked child re-executing...
+I, [2016-05-27T11:13:53.463349 #2912]  INFO -- : inherited addr=/home/hiken/rails/call_center_server/shared/sockets/unicorn.sock fd=11
+I, [2016-05-27T11:13:53.464042 #2912]  INFO -- : Refreshing Gem list
+I, [2016-05-27T11:13:59.885092 #2912]  INFO -- : worker=0 spawning...
+I, [2016-05-27T11:13:59.935367 #2912]  INFO -- : worker=1 spawning...
+I, [2016-05-27T11:13:59.936669 #2916]  INFO -- : worker=0 spawned pid=2916
+I, [2016-05-27T11:13:59.937134 #2916]  INFO -- : worker=0 ready
+I, [2016-05-27T11:13:59.943204 #2912]  INFO -- : master process ready
+I, [2016-05-27T11:13:59.944574 #2919]  INFO -- : worker=1 spawned pid=2919
+I, [2016-05-27T11:13:59.945027 #2919]  INFO -- : worker=1 ready
+E, [2016-05-27T13:35:47.359260 #2912] ERROR -- : old PID:1772 running with existing pid=/home/hiken/rails/call_center_server/shared/pids/unicorn.pid.oldbin, refusing rexec
