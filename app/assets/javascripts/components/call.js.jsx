@@ -29,22 +29,20 @@ var Call = React.createClass({
 
     var callTypeIcons = [{
       id: 1,
-      glyphicon: "log-out",
-      color: "red"
-    }, {
-      id: 2,
       glyphicon: "log-in",
       color: "green"
+    }, {
+      id: 2,
+      glyphicon: "log-out",
+      color: "red"
     }];
 
     var rowClass = "";
-    if(this.props.call.duration === 0 && this.props.call.call_type.id === 1){
+    if(this.props.call.duration == 0 && this.props.call.call_type.id == 1){
       rowClass = "danger";
     }
 
     var arrId = this.props.call.call_type.id - 1;
-    console.log(arrId);
-
     return(
       <tr className={rowClass}>
         <td>{this.props.call.phone}</td>

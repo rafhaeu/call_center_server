@@ -12,3 +12,6 @@
 !/log/.keep
 /tmp
 /public/assets
+/shared/log/*.log
+/shared/pids/*.pid
+/shared/pids/*.oldbin
