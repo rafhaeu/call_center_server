@@ -28,17 +28,17 @@ var Call = React.createClass({
     }
 
     var callTypeIcons = [{
-      id: 1,
+      id: 2,
       glyphicon: "log-out",
       color: "red"
     }, {
-      id: 2,
+      id: 1,
       glyphicon: "log-in",
       color: "green"
     }];
 
     var rowClass = "";
-    if(this.props.call.duration === 0 && this.props.call.call_type.id === 2){
+    if(this.props.call.duration === 0 && this.props.call.call_type.id === 1){
       rowClass = "danger";
     }
 
