@@ -9,14 +9,14 @@ var Call = React.createClass({
       clientLink = "N/A";
     }
 
-    var internalLink;
-    if(this.props.call.internal) {
-      internalLink = <a href={"/internals/" + this.props.call.internal.id}>
-        {this.props.call.internal.name}
-      </a>
-    } else {
-      internalLink = "N/A";
-    }
+    // var internalLink;
+    // if(this.props.call.internal) {
+    //   internalLink = <a href={"/internals/" + this.props.call.internal.id}>
+    //     {this.props.call.internal.name}
+    //   </a>
+    // } else {
+    //   internalLink = "N/A";
+    // }
 
     var callTypeLink;
     if(this.props.call.call_type) {
@@ -51,9 +51,6 @@ var Call = React.createClass({
         </td>
         <td>{this.props.call.called_at}</td>
         <td>{this.props.call.duration}</td>
-        <td>
-          {internalLink}
-        </td>
         <td>
           <span
             style={{color: callTypeIcons[arrId].color}}

@@ -3,7 +3,8 @@ class CallsController < ApplicationController
   before_action :set_call, only: [:show, :edit, :update, :destroy]
 
   def today
-    @calls = Call.includes(:call_type, :internal, :client).ordering_last_ones
+    # @calls = Call.includes(:call_type, :internal, :client).ordering_last_ones.all_with_ordering
+    @calls = Call.includes(:call_type, :internal, :client).last(30)#.ordering_last_ones.all_with_ordering
     respond_to do |format|
       format.html 
       format.json do 

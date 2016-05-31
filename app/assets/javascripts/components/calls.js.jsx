@@ -6,7 +6,7 @@ var Calls = React.createClass({
       client_id,
       called_at,
       duration,
-      internal_id,
+      // internal_id,
       call_type
     }) => <Call 
       key={id}
@@ -15,7 +15,7 @@ var Calls = React.createClass({
       client={client_id}
       called_at={called_at}
       duration={duration}
-      internal={internal_id}
+      // internal={internal_id}
       call_type={call_type}
     />
     return (
@@ -26,7 +26,7 @@ var Calls = React.createClass({
               <th>Πελάτης</th>
               <th>Ώρα</th>
               <th>Διάρκεια</th>
-              <th>Εσωτερικό</th>
+              // <th>Εσωτερικό</th>
               <th>Εισ/Εξερ</th>
             </tr>
           </thead>

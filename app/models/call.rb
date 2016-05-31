@@ -11,7 +11,7 @@ class Call < ApplicationRecord
   scope :ordering, -> { where(internal: sector_internals) }
   scope :unique_phones, -> { select('distinct on (phone) *') }
   scope :phone_called_at_order, -> { order('phone, called_at desc') }
-  scope :all_with_ordering, -> { order('called_at desc') }
+  scope :all_with_ordering, -> { order('created_at desc') }
   scope :today, -> do
     today = Time.now.beginning_of_day
     where("called_at > ?", today)
