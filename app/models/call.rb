@@ -9,16 +9,17 @@ class Call < ApplicationRecord
 
   scope :client, -> (client) { where client: client }
   scope :ordering, -> { where(internal: sector_internals) }
-  scope :unique_phones, -> { select('distinct on (phone) *') }
+  # scope :phone_called_at_order, -> { order('phone, called_at desc') }
   scope :phone_called_at_order, -> { order('phone, called_at desc') }
-  scope :all_with_ordering, -> { order('created_at desc') }
+  scope :all_with_ordering, -> { order('called_at desc') }
+
   scope :today, -> do
     today = Time.now.beginning_of_day
     where("called_at > ?", today)
   end
 
   def self.ordering_last_ones
-    today.ordering.unique_phones.phone_called_at_order
+    today.all_with_ordering.ordering
   end
 
   def self.sector_internals

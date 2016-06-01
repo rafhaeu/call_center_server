@@ -6,7 +6,7 @@ var Calls = React.createClass({
       client_id,
       called_at,
       duration,
-      // internal_id,
+      internal,
       call_type
     }) => <Call 
       key={id}
@@ -15,10 +15,11 @@ var Calls = React.createClass({
       client={client_id}
       called_at={called_at}
       duration={duration}
-      // internal={internal_id}
+      internal={internal_id}
       call_type={call_type}
     />
     return (
+      <div className="table-responsive">
         <table id="calls" className="table">
           <thead>
             <tr>
@@ -26,7 +27,7 @@ var Calls = React.createClass({
               <th>Πελάτης</th>
               <th>Ώρα</th>
               <th>Διάρκεια</th>
-              // <th>Εσωτερικό</th>
+              <th>Εσωτερικό</th>
               <th>Εισ/Εξερ</th>
             </tr>
           </thead>
@@ -37,6 +38,7 @@ var Calls = React.createClass({
              })} 
           </tbody>
         </table>
+      </div>
     );
   }
 });

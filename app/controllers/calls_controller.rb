@@ -3,8 +3,7 @@ class CallsController < ApplicationController
   before_action :set_call, only: [:show, :edit, :update, :destroy]
 
   def today
-    # @calls = Call.includes(:call_type, :internal, :client).ordering_last_ones.all_with_ordering
-    @calls = Call.includes(:call_type, :internal, :client).last(30)#.ordering_last_ones.all_with_ordering
+    @calls = Call.select("id, phone, internal_id, called_at, call_type_id, internal_id, client_id, duration").includes(:call_type, :client).ordering_last_ones
     respond_to do |format|
       format.html 
       format.json do 
@@ -31,6 +30,8 @@ class CallsController < ApplicationController
   def index
     if(params[:client].present?)
       @calls = Call.includes(:call_type, :internal, :client).where(client_id: params[:client])
+    elsif(params[:internal].present?)
+      @calls = Call.includes(:call_type, :internal, :client).where(internal_id: params[:internal])
     else
       @calls = Call.includes(:call_type, :internal, :client).all_with_ordering
     end
