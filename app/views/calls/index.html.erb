@@ -1,5 +1,6 @@
-<p id="notice"><%= notice %></p>
 <h1>Κλήσεις</h1>
-<%= react_component "CallsContainer", callsPath: calls_path, prerender: true %>
-<br>
+<p id="notice"><%= notice %></p>
+<div class="contaier-fluid">
+  <%= react_component "CallsContainer", callsPath: calls_path, prerender: true %>
+</div>
 <%= link_to 'Νέα Κλήση', new_call_path %>

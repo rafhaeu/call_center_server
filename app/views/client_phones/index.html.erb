@@ -1,9 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Τηλέφωνα Πελατών</h1>
-
-<%= render partial: "client_phones/client_phones", locals: { mode: nil, client_phones: @client_phones } %>
-
-<br>
-
 <%= link_to 'Νέο τηλέφωνο πελάτη', new_client_phone_path %>
+<br>
+<%= render partial: "client_phones/client_phones", locals: { mode: nil, client_phones: @client_phones } %>
