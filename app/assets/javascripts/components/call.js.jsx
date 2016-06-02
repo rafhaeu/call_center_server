@@ -44,24 +44,27 @@ var Call = React.createClass({
 
     var arrId = this.props.call.call_type.id - 1;
     return(
-      <tr className={rowClass}>
-        <td>{this.props.call.phone}</td>
-        <td>
-          {clientLink}
-        </td>
-        <td>{this.props.call.called_at}</td>
-        <td>{this.props.call.duration}</td>
-        <td>
-          {internalLink}
-        </td>
-        <td>
-          <span
-            style={{color: callTypeIcons[arrId].color}}
-            className={
-              "glyphicon glyphicon-" + callTypeIcons[arrId].glyphicon}>
-          </span>
-        </td>
-      </tr>
+        <div className={"row " + rowClass}>
+          <div className="col-md-4">
+            {this.props.call.phone}
+            <br />
+            {clientLink}
+          </div>
+          <div className={"col-md-4"}>
+            {this.props.call.called_at}
+            <br /> 
+            {internalLink}
+          </div>
+          <div className={"col-md-4"}>
+            {this.props.call.duration}
+            <br />
+            <span
+              style={{color: callTypeIcons[arrId].color}}
+              className={
+                "glyphicon glyphicon-" + callTypeIcons[arrId].glyphicon}>
+            </span>
+          </div>
+        </div>
     );
   }
 });
