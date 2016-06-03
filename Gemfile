@@ -32,6 +32,8 @@ gem 'unicorn'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'rails-i18n'
+
 gem 'bootstrap-sass'
 gem 'react-rails'
 

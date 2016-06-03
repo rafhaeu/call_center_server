@@ -4,7 +4,7 @@ class ClientPhonesController < ApplicationController
   # GET /client_phones
   # GET /client_phones.json
   def index
-    @client_phones = ClientPhone.all
+    @client_phones = ClientPhone.reverse_by_creation
   end
 
   # GET /client_phones/1

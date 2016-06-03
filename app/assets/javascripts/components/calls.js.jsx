@@ -19,11 +19,11 @@ var Calls = React.createClass({
       call_type={call_type}
     />
     return (
-      <div id="calls">
+      <ul id="calls" className="list-group">
         {this.props.calls.map(function(call) {
           return <Call key={call.id} call={call} />;
          })} 
-        </div>
+      </ul>
     );
   }
 });

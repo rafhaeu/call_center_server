@@ -1,19 +1,16 @@
-<div class="row">
-  <div class="col-md-4">
-    <p id="notice"><%= notice %></p>
+<div class="col-md-4">
+  <p id="notice"><%= notice %></p>
 
-    <h1><%= @internal.name %></h1>
+  <h1><%= @internal.name %></h1>
 
-    <p>
-      <strong>Sector:</strong>
-      <%= @internal.sector.name %>
-    </p>
-    <%= link_to 'Επεξεργασία', edit_internal_path(@internal) %> |
-    <%= link_to 'Εσωτερικά', internals_path %>
-  </div>
-
-  <div class="col-md-8">
-    <%= react_component "CallsContainer", callsPath: "/calls?internal=#{@internal.id}" %>
-  </div>
+  <p>
+  <strong>Sector:</strong>
+  <%= @internal.sector.name %>
+  </p>
+  <%= link_to 'Επεξεργασία', edit_internal_path(@internal) %> |
+  <%= link_to 'Εσωτερικά', internals_path %>
 </div>
 
+<div class="col-md-8">
+  <%= react_component "CallsContainer", callsPath: "/calls?internal=#{@internal.id}" %>
+</div>

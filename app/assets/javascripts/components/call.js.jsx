@@ -30,41 +30,52 @@ var Call = React.createClass({
     var callTypeIcons = [{
       id: 1,
       glyphicon: "log-in",
+      text: "εισ",
       color: "green"
     }, {
       id: 2,
       glyphicon: "log-out",
+      text: "εξε",
       color: "red"
     }];
 
     var rowClass = "";
     if(this.props.call.duration == 0 && this.props.call.call_type.id == 1){
-      rowClass = "danger";
+      rowClass = "list-group-item-danger";
     }
 
     var arrId = this.props.call.call_type.id - 1;
     return(
-        <div className={"row " + rowClass}>
-          <div className="col-md-4">
-            {this.props.call.phone}
-            <br />
-            {clientLink}
+        <li className={"list-group-item clearfix " + rowClass}>
+          <div className="col-md-4 col-sm-4 col-xs-12">
+            <div className="col-md-8 col-sm-12">
+              {this.props.call.called_at}
+            </div>
+            <div className="col-md-4 col-sm-12">
+              {this.props.call.phone}
+            </div>
           </div>
-          <div className={"col-md-4"}>
-            {this.props.call.called_at}
-            <br /> 
-            {internalLink}
+          <div className="col-md-6 col-sm-6 col-xs-12">
+            <div className="col-md-6 col-sm-12">
+              {clientLink}
+            </div>
+            <div className="col-md-6 col-sm-12">
+              {internalLink}
+            </div>
           </div>
-          <div className={"col-md-4"}>
-            {this.props.call.duration}
-            <br />
-            <span
-              style={{color: callTypeIcons[arrId].color}}
-              className={
-                "glyphicon glyphicon-" + callTypeIcons[arrId].glyphicon}>
-            </span>
+          <div className="col-md-2 col-sm-2 col-xs-12">
+            <div className="col-md-8 col-sm-12">
+              {this.props.call.duration}
+            </div>
+            <div className="col-md-4 col-sm-12">
+              <span
+                style={{color: callTypeIcons[arrId].color}}
+                className={
+                  "glyphicon glyphicon-" + callTypeIcons[arrId].glyphicon}>
+              </span>
+            </div>
           </div>
-        </div>
+        </li>
     );
   }
 });

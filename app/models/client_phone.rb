@@ -3,6 +3,8 @@ class ClientPhone < ApplicationRecord
   has_many :calls
   after_save :update_calls
 
+  scope :reverse_by_creation, -> { order('created_at desc') }
+
   private
 
   def update_calls

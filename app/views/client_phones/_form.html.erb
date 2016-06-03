@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :client_id, 'Πελάτης' %>
-    <%= f.select :client_id, options_for_select(Client.all.map { |client| [client.name, client.id] }), {}, class: 'form-control' %>
+    <%= f.select :client_id, options_for_select(Client.reverse_by_creation.map { |client| [client.name, client.id] }), {}, class: 'form-control' %>
   </div>
 
   <div class="field">

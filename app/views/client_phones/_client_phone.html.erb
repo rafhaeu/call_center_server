@@ -1,6 +1,6 @@
 <tr>
   <% unless mode == "client"  %>
-    <td><%= client_phone.client.try(:name) %></td>
+    <td><%= link_to client_phone.client.try(:name), client_phone.client %></td>
   <% end %>
   <td><%= client_phone.phone %></td>
   <td><%= link_to 'Επεξεργασία', edit_client_phone_path(client_phone) %></td>

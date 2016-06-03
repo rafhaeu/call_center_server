@@ -1,0 +1,4 @@
+el:
+  activerecord:
+    attributes:
+      client: Πελάτης
