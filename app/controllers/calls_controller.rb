@@ -29,9 +29,9 @@ class CallsController < ApplicationController
   # GET /calls.json
   def index
     if(params[:client].present?)
-      @calls = Call.includes(:call_type, :internal, :client).where(client_id: params[:client])
+      @calls = Call.includes(:call_type, :internal, :client).where(client_id: params[:client]).all_with_ordering
     elsif(params[:internal].present?)
-      @calls = Call.includes(:call_type, :internal, :client).where(internal_id: params[:internal])
+      @calls = Call.includes(:call_type, :internal, :client).where(internal_id: params[:internal]).all_with_ordering
     else
       @calls = Call.includes(:call_type, :internal, :client).all_with_ordering
     end

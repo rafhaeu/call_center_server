@@ -3,7 +3,7 @@ var CallsContainer = React.createClass({
     this.fetchCalls();
   },
   componentDidMount() {
-    this.loadInterval = setInterval(this.fetchCalls, 1000);
+    this.loadInterval = setInterval(this.fetchCalls, 3000);
   },
   componentWillUnmount() {
     this.loadInterval && clearInterval(this.loadInterval);
