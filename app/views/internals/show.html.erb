@@ -1,10 +1,12 @@
 <div class="col-md-4">
   <p id="notice"><%= notice %></p>
-
   <h1><%= @internal.name %></h1>
-
   <p>
-  <strong>Sector:</strong>
+    <strong>Κωδικός:</strong> 
+    <%= @internal.id %>
+  </p>
+  <p>
+  <strong>Τομέας:</strong>
   <%= @internal.sector.name %>
   </p>
   <%= link_to 'Επεξεργασία', edit_internal_path(@internal) %> |

@@ -4,7 +4,8 @@ class ClientsController < ApplicationController
   # GET /clients
   # GET /clients.json
   def index
-    @clients = Client.reverse_by_creation
+    # @clients = Client.reverse_by_creation
+    @clients = Client.select("id, name").search(params[:search])
   end
 
   # GET /clients/1

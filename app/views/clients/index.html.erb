@@ -3,4 +3,9 @@
 <h1>Πελάτες</h1>
 <%= link_to 'Προσθήκη πελάτη', new_client_path %>
 <br>
-<%= render "clients/clients", clients: @clients %>
+<%= form_tag clients_path, method: "get", id: "clients_search", remote: true, html: { autocomplete: "off" }, class: "form-inline" do %>
+  <%= text_field_tag :search, params[:search], options: { autocomplete: "off" }, class: 'form-control', placeholder: 'Αναζήτηση', autofocus: true %>
+<% end %>
+<div id="clients">
+  <%= render partial: "clients/clients", locals: { clients: @clients } %>
+</div>

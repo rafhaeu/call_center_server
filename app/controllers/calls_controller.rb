@@ -33,7 +33,7 @@ class CallsController < ApplicationController
     elsif(params[:internal].present?)
       @calls = Call.includes(:call_type, :internal, :client).where(internal_id: params[:internal]).all_with_ordering
     else
-      @calls = Call.includes(:call_type, :internal, :client).all_with_ordering
+      @calls = Call.includes(:call_type, :internal, :client).today.all_with_ordering
     end
     respond_to do |format|
       format.html 
@@ -81,7 +81,7 @@ class CallsController < ApplicationController
     respond_to do |format|
       if @call.save
         format.html { redirect_to @call, notice: 'Call was successfully created.' }
-        format.json { render :json, status: :created, location: @call }
+        format.json { render status: :ok, json: @call }
       else
         format.html { render :new }
         format.json { render json: @call.errors, status: :unprocessable_entity }

@@ -9,4 +9,12 @@ class Client < ApplicationRecord
     puts cp
     cp.nil? ? cp : cp.client
   end
+
+  def self.search(search)
+    return all unless search
+    where(
+      'cast(id as text) LIKE :search OR name ILIKE :search',
+      search: "%#{search}%"
+    )
+  end
 end
