@@ -11,6 +11,12 @@ class ClientsController < ApplicationController
   # GET /clients/1
   # GET /clients/1.json
   def show
+    called_at = Time.now
+    if(params[:called_at].present?)
+      called_at = Date.parse(params[:called_at])
+    end
+    dates = called_at.beginning_of_day..called_at.end_of_day
+    @client = Client.includes(:calls).where(clients: {id: params[:id]}, calls: { called_at: dates }).order("calls.called_at DESC").first
   end
 
   # GET /clients/new

@@ -25,6 +25,10 @@
   </div>
   <div class="col-md-8 col-sm-12 col-xs-12">
     <h3 class="text-center">Κλήσεις</h3>
-    <%# <%= react_component "CallsContainer", callsPath: "/calls?client=#{@client.id}" %>
+    <%= form_tag("/clients/#{@client.id}", method: :get, class: "form-inline") do %>
+      <%= date_field_tag :called_at, Time.now, class: "form-control" %>
+      <%= submit_tag "Αναζήτηση", class: "btn btn-danger" %>
+    <% end %>
+    <br/>
     <%= render partial: "calls/calls", locals: {calls: @client.calls} %>
   </div>

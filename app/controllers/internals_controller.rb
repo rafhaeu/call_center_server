@@ -15,7 +15,7 @@ class InternalsController < ApplicationController
       called_at = Date.parse(params[:called_at])
     end
     dates = called_at.beginning_of_day..called_at.end_of_day
-    @internal = Internal.includes(:calls).where(internals: {id: params[:id]}, calls: { called_at: dates }).first
+    @internal = Internal.includes(:calls).where(internals: {id: params[:id]}, calls: { called_at: dates }).order("calls.called_at DESC").first
   end
 
   # GET /internals/new
