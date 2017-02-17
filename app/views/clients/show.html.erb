@@ -25,5 +25,6 @@
   </div>
   <div class="col-md-8 col-sm-12 col-xs-12">
     <h3 class="text-center">Κλήσεις</h3>
-    <%= react_component "CallsContainer", callsPath: "/calls?client=#{@client.id}" %>
+    <%# <%= react_component "CallsContainer", callsPath: "/calls?client=#{@client.id}" %>
+    <%= render partial: "calls/calls", locals: {calls: @client.calls} %>
   </div>

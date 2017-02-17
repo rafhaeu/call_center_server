@@ -32,6 +32,10 @@ class CallsController < ApplicationController
       @calls = Call.includes(:call_type, :internal, :client).where(client_id: params[:client]).all_with_ordering
     elsif(params[:internal].present?)
       @calls = Call.includes(:call_type, :internal, :client).where(internal_id: params[:internal]).all_with_ordering
+    elsif(params[:called_at].present?)
+      date = Date.parse(params[:called_at])
+      dates = date.beginning_of_day..date.end_of_day
+      @calls = Call.includes(:call_type, :internal, :client).where(called_at: dates).all_with_ordering
     else
       @calls = Call.includes(:call_type, :internal, :client).today.all_with_ordering
     end

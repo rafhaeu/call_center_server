@@ -13,6 +13,12 @@
   <%= link_to 'Εσωτερικά', internals_path %>
 </div>
 
-<div class="col-md-8">
-  <%= react_component "CallsContainer", callsPath: "/calls?internal=#{@internal.id}" %>
+<div class="col-md-8 col-sm-12 col-xs-12">
+  <h3 class="text-center">Κλήσεις</h3>
+  <%= form_tag("/internals/#{@internal.id}", method: :get, class: "form-inline") do %>
+    <%= date_field_tag :called_at, Time.now, class: "form-control" %>
+    <%= submit_tag "Αναζήτηση", class: "btn btn-danger" %>
+  <% end %>
+  <br/>
+  <%= render partial: "calls/calls", locals: {calls: @internal.calls} %>
 </div>

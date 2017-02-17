@@ -10,6 +10,12 @@ class InternalsController < ApplicationController
   # GET /internals/1
   # GET /internals/1.json
   def show
+    called_at = Time.now
+    if(params[:called_at].present?)
+      called_at = Date.parse(params[:called_at])
+    end
+    dates = called_at.beginning_of_day..called_at.end_of_day
+    @internal = Internal.includes(:calls).where(internals: {id: params[:id]}, calls: { called_at: dates }).first
   end
 
   # GET /internals/new

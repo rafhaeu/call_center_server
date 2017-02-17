@@ -1,6 +1,11 @@
 <h1>Κλήσεις</h1>
 <p id="notice"><%= notice %></p>
-<div class="contaier-fluid">
-  <%= react_component "CallsContainer", callsPath: calls_path, prerender: true %>
-</div>
+<%= form_tag('/calls', method: :get, class: "form-inline") do %>
+  <%= date_field_tag :called_at, Time.now, class: "form-control" %>
+  <%= submit_tag "Αναζήτηση", class: "btn btn-danger" %>
+<% end %>
+<br/>
+<table class="table">
+  <%= render @calls %>
+</table>
 <%= link_to 'Νέα Κλήση', new_call_path %>
