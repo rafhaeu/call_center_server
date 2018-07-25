@@ -8,14 +8,16 @@ module ApplicationHelper
 
   def calltype_icon(calltype)
     styles = calltype_styling(calltype)
-    "<span style='color: #{styles[:color]}' class='glyphicon glyphicon-log-#{styles[:glyphicon]}'></span>"
+    "<span style='color: #{styles[:color]}' class='glyphicon glyphicon-#{styles[:glyphicon]}'></span>"
   end
 
   def calltype_styling(calltype)
     if calltype == 1
-      {color: "green", glyphicon: "in"}
+      {color: "green", glyphicon: "log-in"}
     elsif calltype == 2
-      {color: "red", glyphicon: "out"}
+      {color: "red", glyphicon: "log-out"}
+    else
+      {color: "#2669c2", glyphicon: "share-alt"}
     end
   end
 end

@@ -16,7 +16,7 @@ class ClientsController < ApplicationController
       called_at = Date.parse(params[:called_at])
     end
     dates = called_at.beginning_of_day..called_at.end_of_day
-    @client = Client.includes(:calls).where(clients: {id: params[:id]}, calls: { called_at: dates }).order("calls.called_at DESC").first
+    @client = Client.includes(:calls).where(clients: {id: params[:id]}, calls: { called_at: dates }).order("calls.called_at DESC").first || Client.find(params[:id])
   end
 
   # GET /clients/new

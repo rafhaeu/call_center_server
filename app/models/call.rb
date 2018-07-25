@@ -19,7 +19,7 @@ class Call < ApplicationRecord
   end
 
   def self.ordering_last_ones
-    today.all_with_ordering.ordering.first(50)
+    today.all_with_ordering.ordering.first(70)
   end
 
   def self.sector_internals

@@ -20,5 +20,9 @@
     <%= submit_tag "Αναζήτηση", class: "btn btn-danger" %>
   <% end %>
   <br/>
-  <%= render partial: "calls/calls", locals: {calls: @internal.calls} %>
+  <% if @internal.calls.present? %>
+    <%= render partial: "calls/calls", locals: {calls: @internal.calls} %>
+  <% else %>
+    <p>Αυτό το εσωτερικό δεν έχει κλήσεις αυτή την ημέρα</p>
+  <% end %>
 </div>
