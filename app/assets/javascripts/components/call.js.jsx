@@ -37,6 +37,11 @@ var Call = React.createClass({
       glyphicon: "log-out",
       text: "εξε",
       color: "red"
+    }, {
+      id: 5,
+        glyphicon: "share-alt",
+        text: "πρθ",
+        color: "#2669c2"
     }];
 
     var rowClass = "";
@@ -44,7 +49,8 @@ var Call = React.createClass({
       rowClass = "list-group-item-danger";
     }
 
-    var arrId = this.props.call.call_type.id - 1;
+    var call_id = this.props.call.call_type.id;
+    var callTypeIcon = callTypeIcons.find((ele) => ele.id === call_id);
     return(
         <li className={"list-group-item clearfix " + rowClass}>
           <div className="col-md-4 col-sm-4 col-xs-12">
@@ -69,9 +75,10 @@ var Call = React.createClass({
             </div>
             <div className="col-md-4 col-sm-12">
               <span
-                style={{color: callTypeIcons[arrId].color}}
+                style={{color: callTypeIcon.color}}
                 className={
-                  "glyphicon glyphicon-" + callTypeIcons[arrId].glyphicon}>
+                  // "glyphicon glyphicon-" + callTypeIcons[arrId].glyphicon}>
+                  "glyphicon glyphicon-" + callTypeIcon.glyphicon}>
               </span>
             </div>
           </div>
