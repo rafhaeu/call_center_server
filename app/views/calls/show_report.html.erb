@@ -1,0 +1,52 @@
+<div class="container-fluid">
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h1 class="text-center">Αναφορά</h1>
+    <p>Σύνολο κλήσεων: <%= @calls.count %> | <%= link_to "Πίσω στη φόρμα αναφοράς", report_path %></p>
+    <h2 class="text-center">Τοπ Κλήσεις σε διάρκεια</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th> Εσωτερικό </th>
+          <th> Όνομα </th>
+          <th> Πελάτης </th>
+          <th> Επωνυμία </th>
+          <th> Ημ/νια Κλήσης </th>
+          <th> Διάρκεια </th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @top_calls.each do |c| %>
+        <tr>
+          <td> <%= link_to c.internal.id, c.internal %></td>
+          <td> <%= link_to c.internal.name, c.internal  %> </td>
+          <td> <%= c.client.present? ? link_to(c.client.id, c.client) : "" %></td>
+          <td> <%= c.client.present? ? link_to(c.client.name, c.client) : c.phone %> </td>
+          <td> <%= c.called_at %> </td>
+          <td> <%= c.duration %> </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+    <h2 class="text-center">Αριθμός Κλήσεων / Εσωτερικό </h2>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Εσωτερικό</th>
+        <th>Όνομα</th>
+        <th>Πλήθος Κλήσεων</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @internals.each do |i| %>
+        <tr>
+          <td><%= link_to i[:internal].id, i[:internal] %></td>
+          <td><%= link_to i[:internal].name, i[:internal] %></td>
+          <td> <%= i[:count] %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>

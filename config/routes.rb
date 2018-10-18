@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :sectors
 
   root 'calls#today'
+  get '/report', to: 'calls#report'
+  get '/show_report', to: 'calls#show_report'
 end

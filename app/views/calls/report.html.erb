@@ -1,0 +1,36 @@
+<h1 class="text-center">Ανάλυση Κλήσεων</h1>
+<div class="col-md-4 col-md-offset-4">
+<%= form_tag('/show_report', method: :get) do %>
+  <div class="form-group">
+    <%= label_tag :from, "Από" %>
+    <%= date_field_tag :from, Date.new(Time.now.year, Time.now.month, 1), class: "form-control", required: true %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :to, "Έως" %>
+    <%= date_field_tag :to, Date.new(Time.now.year, Time.now.month, Time.now.day), class: "form-control", required: true %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :from_hours, "Ώρα Από" %>
+    <%= text_field_tag :from_hours, "08:00", class: "form-control", required: true %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :to_hours, "Ώρα Έως" %>
+    <%= text_field_tag :to_hours, "14:30", class: "form-control", required: true %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :number_of_top_calls, "Αριθμός κορυφαίων κλήσεων σε διάρκεια" %>
+    <%= number_field_tag :number_of_top_calls, 3, class: "form-control", required: true %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :call_types, "Τύπος Κλήσεων (επιλέξτε τουλάχιστον μία)" %>
+    <%= select_tag :call_types, options_for_select(CallType.all.map { |ct| [ct.name, ct.id] }), multiple: true, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :sectors, "Τομείς Εσωτερικών (επιλέξτε τουλάχιστον ένα)" %>
+    <%= select_tag :sectors, options_for_select(Sector.all.map { |s| [s.name, s.id] }), multiple: true, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= submit_tag "Αναζήτηση", class: "btn btn-danger" %>
+  </div>
+<% end %>
+</div>

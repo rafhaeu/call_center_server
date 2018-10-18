@@ -25,6 +25,41 @@ class CallsController < ApplicationController
     end
   end
 
+  def report
+  end
+
+  def show_report
+    from_date = params[:from]
+    to_date = params[:to]
+    from_hours, from_minutes = params[:from_hours].split(':')
+    to_hours, to_minutes = params[:to_hours].split(':')
+    call_types = params[:call_types]
+    sectors = params[:sectors]
+    number_of_top_calls = params[:number_of_top_calls]
+    dates = from_date..to_date
+    internals = Internal.where(sector: sectors)
+    calls = Call.where(called_at: dates).where(call_type_id: call_types).where("duration > ?", 0).where(internal: internals)
+    @calls = filter_calls_by_time(calls, from_hours, from_minutes, to_hours, to_minutes)
+    @top_calls = @calls.sort_by { |call| call.duration }.reverse!.first(number_of_top_calls.to_i)
+    @internals = []
+    internals.each do |i|
+      count = 0
+      @calls.each do |c|
+        count += 1 if c.internal_id == i.id
+      end
+      @internals << {internal: i, count: count}
+    end
+    @internals.sort_by! { |internal| internal[:count] }.reverse!
+  end
+
+  def filter_calls_by_time(calls, from_hours, from_minutes, to_hours, to_minutes)
+    calls.select do |call|
+      temp_from_time = temp_time(call, from_hours, from_minutes)
+      temp_to_time = temp_time(call, to_hours, to_minutes)
+      call.called_at.time >= temp_from_time && call.called_at.time <= temp_to_time
+    end
+  end
+
   # GET /calls
   # GET /calls.json
   def index
@@ -127,5 +162,9 @@ class CallsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def call_params
       params.require(:call).permit(:phone, :called_at, :duration, :internal_id, :call_type_id)
+    end
+
+    def temp_time(call, hour, min)
+      Time.new(call.called_at.year, call.called_at.month, call.called_at.day, hour.to_i, min.to_i, 0)
     end
 end
