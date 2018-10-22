@@ -29,16 +29,16 @@ class CallsController < ApplicationController
   end
 
   def show_report
-    from_date = params[:from]
-    to_date = params[:to]
+    from_date = Date.parse(params[:from])
+    to_date = Date.parse(params[:to])
     from_hours, from_minutes = params[:from_hours].split(':')
     to_hours, to_minutes = params[:to_hours].split(':')
     call_types = params[:call_types]
     sectors = params[:sectors]
     number_of_top_calls = params[:number_of_top_calls]
-    dates = from_date..to_date
     internals = Internal.where(sector: sectors)
-    calls = Call.where(called_at: dates).where(call_type_id: call_types).where("duration > ?", 0).where(internal: internals)
+    calls = Call.where(called_at: from_date.beginning_of_day..to_date.end_of_day).where(call_type_id: call_types).where("duration > ?", 0).where(internal: internals)
+    @call_types = CallType.all.map { |ct| [ct.name, ct.id] }
     @calls = filter_calls_by_time(calls, from_hours, from_minutes, to_hours, to_minutes)
     @top_calls = @calls.sort_by { |call| call.duration }.reverse!.first(number_of_top_calls.to_i)
     @internals = []

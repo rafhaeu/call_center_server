@@ -1,3 +1,4 @@
+<div class="container-fluid">
 <h1 class="text-center">Ανάλυση Κλήσεων</h1>
 <div class="col-md-4 col-md-offset-4">
 <%= form_tag('/show_report', method: :get) do %>
@@ -23,7 +24,7 @@
   </div>
   <div class="form-group">
     <%= label_tag :call_types, "Τύπος Κλήσεων (επιλέξτε τουλάχιστον μία)" %>
-    <%= select_tag :call_types, options_for_select(CallType.all.map { |ct| [ct.name, ct.id] }), multiple: true, class: "form-control" %>
+    <%= select_tag :call_types, options_for_select(CallType.all.map { |ct| [ct.name, ct.id] }, CallType.all.pluck(:id)), multiple: true, class: "form-control" %>
   </div>
   <div class="form-group">
     <%= label_tag :sectors, "Τομείς Εσωτερικών (επιλέξτε τουλάχιστον ένα)" %>
